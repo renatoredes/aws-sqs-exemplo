@@ -53,7 +53,12 @@ Exemplo de execução usando Maven:
 * mvn spring-boot:run
 
 
-### Ao final da execução do projeto você deve visualizar no log publicação e o consumer da mensagem.
+### 
+Ao final da execução do projeto, será possível verificar no log tanto a publicação quanto o consumo das mensagens na fila SQS.
+````
+INFO - Order sent to SQS: Order{orderId='número gerado aleatório', customerName='Renato', amount=100.0}
+INFO - Received new order: Order{orderId='número gerado aleatório', customerName='Renato', amount=100.0}
+````
 ![img.png](src/main/resources/static/img.png)
 
 ## Documentação
