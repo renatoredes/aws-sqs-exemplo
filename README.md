@@ -52,6 +52,10 @@ Exemplo de execução usando Maven:
 
 * mvn spring-boot:run
 
+
+### Ao final da execução do projeto você deve visualizar no log publicação e o consumer da mensagem.
+![img.png](src/main/resources/static/img.png)
+
 ## Documentação
 
 - [Documentação do Spring Boot](https://spring.io/projects/spring-boot)
