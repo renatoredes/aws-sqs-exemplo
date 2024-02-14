@@ -1,42 +1,67 @@
-# Exemplo: AWS SQS 
+# Sistema de Pedidos Online com Integração SQS utilizando Spring Cloud
 
-Exemplo Publicando mensagem SQS e consumindo
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Java](https://img.shields.io/badge/Java-11%2B-red)](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3+-green)](https://spring.io/projects/spring-boot)
+[![AWS SDK](https://img.shields.io/badge/AWS%20SDK%20v2+-blue)](https://docs.aws.amazon.com/sdk-for-java/v2/developer-guide/welcome.html)
+[![Spring Cloud](https://img.shields.io/badge/Spring%20Cloud-3+-blue)](https://spring.io/projects/spring-cloud)
 
-![img_1.png](img_1.png)
+Este projeto é um exemplo de integração com o Amazon Simple Queue Service (SQS) utilizando o Spring Boot e o Spring Cloud para um sistema de pedidos online.
 
-Documentação:
-https://docs.aws.amazon.com/pt_br/sqs/?icmpid=docs_homepage_serverless
+## Descrição
 
-LocalStack
+O sistema de pedidos online tem como objetivo enviar informações do pedido para uma fila SQS quando uma nova ordem é recebida. Isso é útil para processar os pedidos de forma assíncrona e escalável, garantindo que as informações do pedido sejam entregues com segurança e confiabilidade.
 
-![img.png](img.png)
+O projeto demonstra como criar e consumir mensagens de uma fila SQS da AWS (Amazon Web Services) usando o Spring Boot em conjunto com o Spring Cloud. Ao receber uma nova ordem no sistema, os detalhes do pedido são encapsulados em uma mensagem e enviados para a fila SQS para processamento posterior.
 
-Documentação Spring Cloud
-https://docs.awspring.io/spring-cloud-aws/docs/3.1.0/reference/html/index.html#starter-dependencies
+## Tecnologias Utilizadas
 
+- Java
+- Spring Boot
+- Spring Cloud
+- AWS SDK v2
+- LocalStack (para desenvolvimento local)
 
-``
-- src
-    - main
-        - java
-            - com
-                - aws
-                    - sqsexemplo
-                        - application
-                            - SqsExemploApplication.java
-                        - domain
-                            - model
-                                - MyMessage.java
-                            - service
-                                - SqsMessageService.java
-                        - infrastructure
-                            - config
-                                - SQSConfig.java
-                            - message
-                                - SqsMessageSender.java
+## Configuração
 
-``
-[![Linguagem Java](https://img.shields.io/badge/Linguagem-Java-orange)](https://www.java.com/)
+Antes de executar o projeto, certifique-se de ter configurado as seguintes propriedades:
 
-![Java](https://img.shields.io/badge/Java-000?style=for-the-badge&logo=java)
-![Java](https://img.shields.io/badge/Java-%23ED8B00.svg??style=for-the-badge&logo=openjdk&logoColor=white)
+- Configure as credenciais da AWS no seu ambiente ou utilize o LocalStack para simular os serviços da AWS localmente.
+- Defina as configurações da fila SQS, como URL e região, no arquivo de propriedades.
+
+Exemplo de configuração da fila SQS no arquivo `application.properties`:
+
+* sqs.order.queue.url
+
+## Execução
+
+Para utilizar o LocalStack para desenvolvimento local:
+
+- Instale o LocalStack conforme as instruções em: [LocalStack](https://github.com/localstack/localstack).
+- Defina as configurações da fila SQS para apontar para o endpoint local do LocalStack.
+
+## Execução
+
+Para executar o projeto, siga estas etapas:
+
+1. Clone o repositório para sua máquina local.
+2. Certifique-se de ter configurado as propriedades da fila SQS conforme mencionado acima.
+3. Execute a aplicação Spring Boot.
+
+Exemplo de execução usando Maven:
+
+* mvn spring-boot:run
+
+## Documentação
+
+- [Documentação do Spring Boot](https://spring.io/projects/spring-boot)
+- [Documentação do Spring Cloud AWS](https://docs.awspring.io/spring-cloud-aws/docs/3.1.0/reference/html/index.html#starter-dependencies)
+- [Documentação da AWS SDK v2](https://docs.aws.amazon.com/sdk-for-java/v2/developer-guide/welcome.html)
+
+## Contribuição
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request com melhorias, correções de bugs ou novos recursos.
+
+## Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE).
