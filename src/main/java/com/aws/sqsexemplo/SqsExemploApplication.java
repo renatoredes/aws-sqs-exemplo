@@ -27,7 +27,7 @@ public class SqsExemploApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		// Simulando a criação de um novo pedido
-		Order order = new Order("12345", "João", 100.0);
+		Order order = Order.createWithRandomId("Renato", 100.0);
 		// Enviando o pedido para fila SQS
 		orderService.createOrder(order);
 	}
