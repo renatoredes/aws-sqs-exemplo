@@ -1,4 +1,5 @@
-# Exemplo de Integração Amazon SQS utilizando Spring Cloud
+# Exemplo de Publicação e Consumo de Mensagens com AWS SQS e Spring Cloud para um sistema de pedidos
+
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Java](https://img.shields.io/badge/Java-11%2B-red)](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html)
