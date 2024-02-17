@@ -26,7 +26,8 @@ O projeto demonstra como criar e consumir mensagens de uma fila SQS da AWS (Amaz
 - Pedido Enviado para SQS: O pedido é encapsulado em uma mensagem e enviado para a fila SQS.
 
 ## Desenho técnico
-![sistema_pedidos.gif](..%2F..%2F..%2FComun%2Faws%20architecture%20-%20draw%2F1602%2Fsistema_pedidos.gif)
+![sistema_pedidos](https://github.com/renatoredes/aws-sqs-exemplo/assets/18330802/7a3fcc49-6935-458f-913c-ce495834b6cb)
+
 
 ## Interações entre Componentes
 - A aplicação Spring Boot interage diretamente com a fila SQS para enviar e consumir mensagens de pedido.
