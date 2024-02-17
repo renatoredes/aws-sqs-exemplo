@@ -13,7 +13,24 @@ Este projeto é um exemplo de integração com o Amazon Simple Queue Service (SQ
 
 O sistema de pedidos online tem como objetivo enviar informações do pedido para uma fila SQS quando uma nova ordem é recebida. Isso é útil para processar os pedidos de forma assíncrona e escalável, garantindo que as informações do pedido sejam entregues com segurança e confiabilidade.
 
-O projeto demonstra como criar e consumir mensagens de uma fila SQS da AWS (Amazon Web Services) usando o Spring Boot em conjunto com o Spring Cloud. Ao receber uma nova ordem no sistema, os detalhes do pedido são encapsulados em uma mensagem e enviados para a fila SQS para processamento posterior.
+O projeto demonstra como criar e consumir mensagens de uma fila SQS da AWS (Amazon Web Services) usando o Spring Boot em conjunto com o Spring Cloud. Por enquanto, a publicação e o consumo de mensagens são tratados dentro da mesma aplicação. Ainda não implementamos o conjunto de endpoints REST que permite a interação do sistema diretamente com a aplicação.
+
+## Componentes Principais:
+- Aplicação Spring Boot: Representa a aplicação que recebe e processa os pedidos.
+- Amazon SQS: Representa o serviço de fila de mensagens da AWS, onde as mensagens de pedido são armazenadas.
+- LocalStack (Opcional): Representa a ferramenta utilizada para simular serviços da AWS localmente durante o desenvolvimento.
+- Pedido Consumido SQS: O pedido é consumido da fila SQS pela aplicação Spring Boot para processamento.
+
+## Fluxo de Mensagens:
+- Pedido Recebido: Um pedido é recebido pela aplicação Spring Boot.
+- Pedido Enviado para SQS: O pedido é encapsulado em uma mensagem e enviado para a fila SQS.
+
+## Desenho técnico
+![sistema_pedidos.gif](..%2F..%2F..%2FComun%2Faws%20architecture%20-%20draw%2F1602%2Fsistema_pedidos.gif)
+
+## Interações entre Componentes
+- A aplicação Spring Boot interage diretamente com a fila SQS para enviar e consumir mensagens de pedido.
+- Durante o desenvolvimento local, a aplicação Spring Boot interage com o LocalStack, que simula os serviços da AWS, incluindo o SQS.
 
 ## Tecnologias Utilizadas
 
@@ -22,6 +39,15 @@ O projeto demonstra como criar e consumir mensagens de uma fila SQS da AWS (Amaz
 - Spring Cloud
 - AWS SDK v2
 - LocalStack (para desenvolvimento local)
+## Classes de Publicação e Consumo
+
+- **Classe de Publicação:** `OrderService`
+- **Classe de Consumo:** `OrderConsumer`
+
+## Classe Principal
+
+- **Classe Principal:** `SqsExemploApplication`
+    - A classe principal `SqsExemploApplication` é a entrada do aplicativo Spring Boot. Ela inicializa o contexto da aplicação Spring Boot, injeta as dependências necessárias e, após a inicialização, cria e envia um novo pedido para a fila SQS para iniciar o fluxo de processamento de pedidos.
 
 ## Configuração
 
