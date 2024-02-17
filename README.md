@@ -13,7 +13,8 @@ Este projeto é um exemplo de integração com o Amazon Simple Queue Service (SQ
 
 O sistema de pedidos online tem como objetivo enviar informações do pedido para uma fila SQS quando uma nova ordem é recebida. Isso é útil para processar os pedidos de forma assíncrona e escalável, garantindo que as informações do pedido sejam entregues com segurança e confiabilidade.
 
-O projeto demonstra como criar e consumir mensagens de uma fila SQS da AWS (Amazon Web Services) usando o Spring Boot em conjunto com o Spring Cloud. Por enquanto, a publicação e o consumo de mensagens são tratados dentro da mesma aplicação. Ainda não implementamos o conjunto de endpoints REST que permite a interação do sistema diretamente com a aplicação.
+O projeto demonstra como criar e consumir mensagens de uma fila SQS da AWS (Amazon Web Services) usando o Spring Boot em conjunto com o Spring Cloud. 
+Por enquanto, a publicação e o consumo de mensagens são tratados dentro da mesma aplicação. Ainda não implementamos o conjunto de endpoints REST que permite a interação do sistema diretamente com a aplicação.
 
 ## Componentes Principais:
 - Aplicação Spring Boot: Representa a aplicação que recebe e processa os pedidos.
